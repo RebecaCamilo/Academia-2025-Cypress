@@ -1,0 +1,17 @@
+# Diretórios do Node.js
+node_modules/
+dist/
+
+# Configurações de IDEs e editores
+.vscode/
+.idea/
+*.swp
+
+# Arquivos de ambiente
+cypress.env.json
+
+# Arquivos do Git
+*.orig
+
+# Arquivos de lock
+package-lock.json
