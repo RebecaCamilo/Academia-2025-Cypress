@@ -21,6 +21,7 @@ import './pages/insurant-data-2.page'
 import './pages/product-data-3.page'
 import './pages/price-option-4.page'
 import './pages/send-quote-5.page'
+import '../../cypress.env.json'
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     if (err.message.includes('e is not defined')) {

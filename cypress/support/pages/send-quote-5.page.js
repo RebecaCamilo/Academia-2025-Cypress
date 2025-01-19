@@ -8,10 +8,10 @@ const ALERT_MESSAGE = '.sweet-alert';
 
 Cypress.Commands.add('preencherCamposObrigatoriosAbaSendQuote', () => {
     cy.get(NAV_SEND_QUOTE).click();
-    cy.get(FIELD_EMAIL).type('teste@mail.com');
+    cy.get(FIELD_EMAIL).type(Cypress.env('email'));
     cy.get(FIELD_USERNAME).type('username');
-    cy.get(FIELD_PASSWORD).type('P@ssw0rd');
-    cy.get(FIELD_CONFIRM_PASSWORD).type('P@ssw0rd');
+    cy.get(FIELD_PASSWORD).type(Cypress.env('senha'));
+    cy.get(FIELD_CONFIRM_PASSWORD).type(Cypress.env('senha'));
     cy.get(BTN_SEND).click();
 })
 
