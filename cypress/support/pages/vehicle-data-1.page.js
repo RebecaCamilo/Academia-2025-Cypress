@@ -7,8 +7,11 @@ const SELECT_FUEL_TYPE = '#fuel';
 const FIELD_LIST_PRICE = '#listprice';
 const FIELD_ANNUAL_MILEAGE = '#annualmileage';
 
-Cypress.Commands.add('preencherCamposObrigatoriosAbaEnterVehicleData', () => {
+Cypress.Commands.add('abrirAbaEnterVehicleData', () => {
     cy.get(NAV_ENTER_VEHICLE_DATA).click();
+})
+
+Cypress.Commands.add('preencherCamposObrigatoriosAbaEnterVehicleData', () => {
     cy.selecionaOpcaoAleatoria(SELECT_MAKE);
     cy.get(FIELD_ENGINE_PERFORMANCE).type('2000');
     cy.digitaData(new Date(), FIELD_DATE_OF_MANUFACTURE)
@@ -19,12 +22,10 @@ Cypress.Commands.add('preencherCamposObrigatoriosAbaEnterVehicleData', () => {
 })
 
 Cypress.Commands.add('preencherCampoEnginePerformanceErradoAbaEnterVehicleData', () => {
-    cy.get(NAV_ENTER_VEHICLE_DATA).click();
-    cy.get(FIELD_ENGINE_PERFORMANCE).type('2000000');
+    cy.get(FIELD_ENGINE_PERFORMANCE).type('2001');
 })
 
 Cypress.Commands.add('verificarMensagemDeErroCampoEnginePerformance', () => {
-    cy.get(FIELD_ENGINE_PERFORMANCE).type('2000000');
     cy.get('.error').should('contain', 'Must be a number between 1 and 2000');
 })
 

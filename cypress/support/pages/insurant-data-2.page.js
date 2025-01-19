@@ -8,8 +8,11 @@ const FIELD_ZIP_CODE = '#zipcode';
 const SELECT_OCCUPATION = '#occupation';
 const RADIO_CHECK_HOBBIES = '.ideal-check:visible';
 
-Cypress.Commands.add('preencherCamposObrigatoriosAbaEnterInsurantData', () => {
+Cypress.Commands.add('abrirAbaEnterInsurantData', () => {
     cy.get(NAV_ENTER_INSURANT_DATA).click();
+})
+
+Cypress.Commands.add('preencherCamposObrigatoriosAbaEnterInsurantData', () => {
     cy.get(FIELD_FIRST_NAME).type('nome');
     cy.get(FIELD_LAST_NAME).type('sobrenome');
     cy.digitaData((function() {

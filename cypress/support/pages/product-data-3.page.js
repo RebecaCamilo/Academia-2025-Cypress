@@ -6,8 +6,11 @@ const SELECT_DAMAGE_INSURANCE = '#damageinsurance';
 const RADIO_CHECK_HOBBIES = '.ideal-check:visible';
 const SELECT_COURTESY_CAR = '#courtesycar';
 
-Cypress.Commands.add('preencherCamposObrigatoriosAbaEnterProductData', () => {
+Cypress.Commands.add('abrirAbaEnterProductData', () => {
     cy.get(NAV_ENTER_PRODUCT_DATA).click();
+})
+
+Cypress.Commands.add('preencherCamposObrigatoriosAbaEnterProductData', () => {
     cy.digitaData((function() {
         let data = new Date();
         data.setMonth(data.getMonth() + 2);
@@ -17,7 +20,6 @@ Cypress.Commands.add('preencherCamposObrigatoriosAbaEnterProductData', () => {
     cy.selecionaOpcaoAleatoria(SELECT_MERIT_RATING);
     cy.selecionaOpcaoAleatoria(SELECT_DAMAGE_INSURANCE);
     cy.get(NAV_ENTER_PRODUCT_DATA).click();
-    cy.get(RADIO_CHECK_HOBBIES).eq(1).click();
-    // cy.selecionaRadioAleatorio(RADIO_CHECK_HOBBIES);
+    cy.selecionaRadioAleatorio(RADIO_CHECK_HOBBIES);
     cy.selecionaOpcaoAleatoria(SELECT_COURTESY_CAR);
 })
